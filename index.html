@@ -1,0 +1,337 @@
+<title>Samuel Aguilar</title>
+<meta name="description" content="Fotógrafo y videógrafo en Guadalajara — retrato, editorial y deporte.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Dark cinematic photo portfolio. Coral accent carried over from Samuel's brand. */
+  :root{
+    --bg:#0b0a0d; --ink:#f3f0ea; --ink-soft:#a6a29a; --line:rgba(255,255,255,.14);
+    --card:#141217; --card-2:#17151b;
+    --coral:#ff4d2e; --coral-2:#ff8a3d; --amber:#ffb24d;
+    --font-display:"Archivo",system-ui,sans-serif;
+    --font-body:"Inter",system-ui,sans-serif;
+    --font-mono:"JetBrains Mono",ui-monospace,monospace;
+    --maxw:78rem; color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased;margin:0;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin-inline:auto;
+    padding-left:max(22px,env(safe-area-inset-left,0px));
+    padding-right:max(22px,env(safe-area-inset-right,0px))}
+  h1,h2,h3{margin:0;font-family:var(--font-display);line-height:.95;text-wrap:balance}
+  a{color:inherit;text-decoration:none}
+  img{display:block}
+  .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin:0 0 1.1rem}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(11,10,13,.92),rgba(11,10,13,.55) 70%,transparent);backdrop-filter:blur(8px);padding-block:.8rem}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{font-family:var(--font-display);font-weight:900;font-size:.95rem;letter-spacing:.04em;background:#fff;color:#0b0a0d;padding:.5rem .8rem;border-radius:999px}
+  .pills{display:flex;gap:.5rem;align-items:center}
+  .pill{font-family:var(--font-body);font-weight:600;font-size:.85rem;padding:.55rem 1rem;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);transition:transform .12s ease,background .2s;cursor:pointer}
+  .pill:hover{transform:translateY(-2px);background:rgba(255,255,255,.14)}
+  .pill.accent{background:var(--coral);border-color:transparent}
+  .pill.accent:hover{background:var(--coral-2)}
+  .pill.lang{background:transparent}
+  .nav-link{display:none}
+  @media(min-width:680px){.nav-link{display:inline-flex}}
+
+  /* HERO */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;margin-top:-4.2rem;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:contrast(1.05) saturate(1.05)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:
+     linear-gradient(180deg,rgba(11,10,13,.55) 0%,rgba(11,10,13,.1) 32%,rgba(11,10,13,.35) 62%,rgba(11,10,13,.96) 100%),
+     radial-gradient(120% 80% at 80% 20%,transparent 40%,rgba(11,10,13,.5) 100%)}
+  .hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:clamp(2.4rem,6vw,4.5rem);padding-top:8rem}
+  .hero h1{font-size:clamp(3.2rem,15vw,10.5rem);font-weight:900;text-transform:uppercase;letter-spacing:-.045em}
+  .hero h1 span{display:block}
+  .hero .role{font-family:var(--font-mono);font-size:clamp(.74rem,2.2vw,1rem);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-top:1.3rem}
+  .hero .role b{color:var(--coral)}
+  .socials{display:flex;gap:.6rem;margin-top:1.5rem;flex-wrap:wrap}
+  .chip{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:lowercase;border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;color:var(--ink);display:inline-flex;gap:.4rem;align-items:center;background:rgba(255,255,255,.05);transition:border-color .2s,color .2s}
+  .chip:hover{border-color:var(--coral);color:var(--coral)}
+  .chip .ig{opacity:.6}
+  .chip.loc{text-transform:none;pointer-events:none}
+  .scroll-hint{position:absolute;left:0;right:0;bottom:1rem;z-index:1;text-align:center;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft)}
+
+  section{padding-block:clamp(3.5rem,8vw,6rem)}
+  .sec-head{font-size:clamp(2.2rem,8vw,4.4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.035em}
+
+  /* WORK */
+  .work-top{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:flex-end;justify-content:space-between}
+  .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.4rem}
+  .fbtn{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem .95rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .18s}
+  .fbtn:hover{color:var(--ink);border-color:rgba(255,255,255,.35)}
+  .fbtn.on{background:var(--coral);border-color:transparent;color:#fff}
+  .gallery{margin-top:2.2rem;columns:3 16rem;column-gap:14px}
+  @media(max-width:560px){.gallery{columns:2 9rem;column-gap:10px}}
+  .shot{break-inside:avoid;margin-bottom:14px;position:relative;border-radius:.7rem;overflow:hidden;cursor:zoom-in;background:var(--card);display:block;width:100%}
+  @media(max-width:560px){.shot{margin-bottom:10px}}
+  .shot img{width:100%;height:auto;transition:transform .5s ease,filter .4s;filter:saturate(.97)}
+  .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,10,13,.55));opacity:0;transition:opacity .3s}
+  .shot:hover img{transform:scale(1.045);filter:saturate(1.08)}
+  .shot:hover::after{opacity:1}
+  .shot .tag{position:absolute;left:.7rem;bottom:.6rem;z-index:2;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(6px);transition:all .3s;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+  .shot:hover .tag{opacity:1;transform:none}
+  .shot.hide{display:none}
+
+  /* ABOUT */
+  .about{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:.78fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  .about-media{border-radius:1.1rem;overflow:hidden;min-height:22rem;position:relative;background:#1b1920}
+  .about-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+  .about-text p{font-size:clamp(1.08rem,2.4vw,1.5rem);line-height:1.5;margin:0 0 1.15rem;max-width:40ch;font-weight:500}
+  .about-text p.small{font-size:1rem;color:var(--ink-soft);font-weight:400;max-width:48ch}
+  .about-text b{color:var(--coral);font-weight:600}
+  .facts{display:flex;gap:2.2rem;flex-wrap:wrap;margin-top:1.6rem}
+  .fact .n{font-family:var(--font-display);font-weight:900;font-size:2.1rem;line-height:1}
+  .fact .l{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:.4rem}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}.about-media{order:-1;min-height:20rem}}
+
+  /* CREDIT */
+  .credit .wrap{text-align:center}
+  .credit .co{font-family:var(--font-display);font-weight:900;font-size:clamp(1.8rem,6vw,3rem);text-transform:uppercase;letter-spacing:-.02em;margin-top:.6rem}
+  .credit .co em{font-style:normal;color:var(--coral)}
+  .credit .meta{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:.9rem}
+
+  /* CONTACT */
+  .contact{background:linear-gradient(180deg,var(--bg),#0f0d12)}
+  .contact .big{font-size:clamp(2.4rem,9vw,5.4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.035em;margin-top:.3rem}
+  .contact .big em{font-style:normal;color:var(--coral)}
+  .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.1rem;margin-top:2.4rem}
+  .ccard{border:1px solid var(--line);border-radius:1rem;padding:1.3rem 1.3rem;background:var(--card);min-width:0;transition:border-color .2s,transform .12s}
+  .ccard:hover{border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
+  .ccard .lbl{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.55rem}
+  .ccard .val{font-size:1rem;word-break:break-word;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+  .ccard a.val-link{color:var(--coral)}
+  .copy{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--ink-soft);border-radius:6px;padding:.25rem .5rem;transition:color .15s,border-color .15s}
+  .copy:hover,.copy.ok{color:var(--coral);border-color:var(--coral)}
+  .cta-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.9rem}
+  .btn{font-weight:600;font-size:.95rem;padding:.85rem 1.4rem;border-radius:999px;background:var(--coral);color:#fff;display:inline-flex;align-items:center;gap:.5rem;transition:transform .12s,background .2s;cursor:pointer}
+  .btn:hover{transform:translateY(-2px);background:var(--coral-2)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{background:rgba(255,255,255,.08)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;margin-top:3rem;padding-top:1.3rem;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:.72rem;color:var(--ink-soft)}
+
+  /* LIGHTBOX */
+  .lb{position:fixed;inset:0;z-index:90;background:rgba(7,6,9,.96);display:none;align-items:center;justify-content:center;padding:env(safe-area-inset-top,0) 1rem}
+  .lb.open{display:flex}
+  .lb img{max-width:min(94vw,1200px);max-height:88vh;width:auto;height:auto;border-radius:.4rem;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lb .x,.lb .arw{position:absolute;background:rgba(255,255,255,.1);border:1px solid var(--line);color:#fff;border-radius:999px;cursor:pointer;display:grid;place-items:center;transition:background .2s;backdrop-filter:blur(6px)}
+  .lb .x{top:1rem;right:1rem;width:2.8rem;height:2.8rem;font-size:1.3rem}
+  .lb .arw{top:50%;transform:translateY(-50%);width:3rem;height:3rem;font-size:1.5rem}
+  .lb .arw.prev{left:1rem}.lb .arw.next{right:1rem}
+  .lb .x:hover,.lb .arw:hover{background:var(--coral)}
+  .lb .cap{position:absolute;bottom:1rem;left:0;right:0;text-align:center;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  @media(max-width:560px){.lb .arw{width:2.5rem;height:2.5rem}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#top">SA</a>
+  <div class="pills">
+    <button class="pill lang" id="langToggle">ES</button>
+    <a class="pill nav-link" href="#work" data-i18n="nav.work">Work</a>
+    <a class="pill nav-link" href="#about" data-i18n="nav.about">About</a>
+    <a class="pill accent" href="#contact"><span data-i18n="nav.contact">Contact</span> →</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="img/hero.jpg" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+    <h1><span>Samuel</span><span>Aguilar</span></h1>
+    <p class="role" data-i18n="hero.role"><b>Photographer</b> &amp; Videographer · Visual Artist</p>
+    <div class="socials">
+      <span class="chip loc">Guadalajara · MX</span>
+      <a class="chip" href="https://instagram.com/raw.s06" target="_blank" rel="noopener"><span class="ig">IG</span> @raw.s06</a>
+      <a class="chip" href="https://instagram.com/mas.sport.photo" target="_blank" rel="noopener"><span class="ig">IG</span> @mas.sport.photo</a>
+    </div>
+  </div>
+  <div class="scroll-hint" data-i18n="scroll">↓ Scroll</div>
+</header>
+
+<main>
+  <section id="work"><div class="wrap">
+    <div class="work-top">
+      <div>
+        <p class="eyebrow" data-i18n="work.eyebrow">Selected work</p>
+        <h2 class="sec-head" data-i18n="work.head">Portfolio</h2>
+      </div>
+      <div class="filters" id="filters">
+        <button class="fbtn on" data-cat="all" data-i18n="f.all">All</button>
+        <button class="fbtn" data-cat="portrait" data-i18n="f.portrait">Portrait</button>
+        <button class="fbtn" data-cat="editorial" data-i18n="f.editorial">Editorial</button>
+        <button class="fbtn" data-cat="sport" data-i18n="f.sport">Sport</button>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-02.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="sport" data-tag="sport"><img src="img/sport-01.jpg" alt="Sport photography — skating" loading="lazy"><span class="tag" data-i18n="f.sport">Sport</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-03.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="editorial" data-tag="editorial"><img src="img/editorial-01.jpg" alt="Fashion editorial — hat series" loading="lazy"><span class="tag" data-i18n="f.editorial">Editorial</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-01.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-06.jpg" alt="Editorial studio portrait with smoke" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="editorial" data-tag="editorial"><img src="img/editorial-02.jpg" alt="Fashion editorial — hat series" loading="lazy"><span class="tag" data-i18n="f.editorial">Editorial</span></a>
+      <a class="shot" data-cat="sport" data-tag="sport"><img src="img/sport-02.jpg" alt="Sport photography — cycling" loading="lazy"><span class="tag" data-i18n="f.sport">Sport</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-04.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-05.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="editorial" data-tag="editorial"><img src="img/editorial-03.jpg" alt="Fashion editorial — hat series" loading="lazy"><span class="tag" data-i18n="f.editorial">Editorial</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-07.jpg" alt="Editorial studio portrait with smoke" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-12.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-08.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-10.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-09.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+      <a class="shot" data-cat="portrait" data-tag="portrait"><img src="img/portrait-11.jpg" alt="Editorial studio portrait" loading="lazy"><span class="tag" data-i18n="f.portrait">Portrait</span></a>
+    </div>
+  </div></section>
+
+  <section class="about" id="about"><div class="wrap">
+    <div class="about-grid">
+      <div class="about-media"><img src="img/samuel.jpg" alt="Samuel Aguilar"></div>
+      <div class="about-text">
+        <p class="eyebrow" data-i18n="about.eyebrow">Behind the lens</p>
+        <p data-i18n="about.p1">I'm passionate about <b>visual art, artistic expression and communication.</b></p>
+        <p class="small" data-i18n="about.p2">I shoot between the studio and the street — editorial portraits that push the body and emotion, fashion stories, and the raw energy of sport.</p>
+        <div class="facts">
+          <div class="fact"><div class="n">3+</div><div class="l" data-i18n="fact.years">Years shooting</div></div>
+          <div class="fact"><div class="n">3</div><div class="l" data-i18n="fact.cats">Portrait · Editorial · Sport</div></div>
+          <div class="fact"><div class="n">2</div><div class="l" data-i18n="fact.feeds">Instagram feeds</div></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="credit"><div class="wrap">
+    <p class="eyebrow" data-i18n="credit.eyebrow">Worked with</p>
+    <div class="co">Santas Patronas <em>Chapu</em></div>
+    <div class="meta" data-i18n="credit.meta">Runners series · Guadalajara</div>
+  </div></section>
+
+  <section class="contact" id="contact"><div class="wrap">
+    <p class="eyebrow" data-i18n="contact.eyebrow">Let's create</p>
+    <h2 class="big" data-i18n="contact.big">Let's make something <em>worth looking at.</em></h2>
+    <div class="cgrid">
+      <div class="ccard"><div class="lbl" data-i18n="lbl.ig1">Instagram · Portrait &amp; product</div>
+        <div class="val"><a class="val-link" href="https://instagram.com/raw.s06" target="_blank" rel="noopener">@raw.s06</a></div></div>
+      <div class="ccard"><div class="lbl" data-i18n="lbl.ig2">Instagram · Sport</div>
+        <div class="val"><a class="val-link" href="https://instagram.com/mas.sport.photo" target="_blank" rel="noopener">@mas.sport.photo</a></div></div>
+      <div class="ccard"><div class="lbl">Email</div>
+        <div class="val"><span>uralessam94@gmail.com</span><button class="copy" data-copy="uralessam94@gmail.com" data-i18n="copy">Copy</button></div></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn" href="mailto:uralessam94@gmail.com?subject=Cotizaci%C3%B3n%20de%20sesi%C3%B3n" data-i18n="btn.quote">Request a quote →</a>
+      <a class="btn ghost" href="https://instagram.com/raw.s06" target="_blank" rel="noopener" data-i18n="btn.ig">See more on Instagram</a>
+    </div>
+    <div class="foot"><span>© 2026 Samuel Aguilar</span><span data-i18n="foot.r">Photographer · Videographer · Guadalajara</span></div>
+  </div></section>
+</main>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="x" id="lbX" aria-label="Close">✕</button>
+  <button class="arw prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="arw next" id="lbNext" aria-label="Next">›</button>
+  <div class="cap" id="lbCap"></div>
+</div>
+
+<script>
+  var dict={
+    "nav.work":{en:"Work",es:"Trabajo"},
+    "nav.about":{en:"About",es:"Sobre mí"},
+    "nav.contact":{en:"Contact",es:"Contacto"},
+    "hero.role":{en:"<b>Photographer</b> &amp; Videographer · Visual Artist",es:"<b>Fotógrafo</b> &amp; Videógrafo · Artista Visual"},
+    "scroll":{en:"↓ Scroll",es:"↓ Baja"},
+    "work.eyebrow":{en:"Selected work",es:"Trabajo seleccionado"},
+    "work.head":{en:"Portfolio",es:"Portafolio"},
+    "f.all":{en:"All",es:"Todo"},
+    "f.portrait":{en:"Portrait",es:"Retrato"},
+    "f.editorial":{en:"Editorial",es:"Editorial"},
+    "f.sport":{en:"Sport",es:"Deporte"},
+    "about.eyebrow":{en:"Behind the lens",es:"Detrás de la cámara"},
+    "about.p1":{en:"I'm passionate about <b>visual art, artistic expression and communication.</b>",es:"Soy un apasionado del <b>arte visual, la expresión artística y la comunicación.</b>"},
+    "about.p2":{en:"I shoot between the studio and the street — editorial portraits that push the body and emotion, fashion stories, and the raw energy of sport.",es:"Disparo entre el estudio y la calle — retratos editoriales que llevan el cuerpo y la emoción al límite, historias de moda y la energía cruda del deporte."},
+    "fact.years":{en:"Years shooting",es:"Años disparando"},
+    "fact.cats":{en:"Portrait · Editorial · Sport",es:"Retrato · Editorial · Deporte"},
+    "fact.feeds":{en:"Instagram feeds",es:"Cuentas de Instagram"},
+    "credit.eyebrow":{en:"Worked with",es:"He trabajado con"},
+    "credit.meta":{en:"Runners series · Guadalajara",es:"Serie de runners · Guadalajara"},
+    "contact.eyebrow":{en:"Let's create",es:"Creemos algo"},
+    "contact.big":{en:"Let's make something <em>worth looking at.</em>",es:"Hagamos algo que <em>valga la pena ver.</em>"},
+    "lbl.ig1":{en:"Instagram · Portrait &amp; product",es:"Instagram · Retrato y producto"},
+    "lbl.ig2":{en:"Instagram · Sport",es:"Instagram · Deporte"},
+    "btn.quote":{en:"Request a quote →",es:"Cotizar →"},
+    "btn.ig":{en:"See more on Instagram",es:"Ver más en Instagram"},
+    "foot.r":{en:"Photographer · Videographer · Guadalajara",es:"Fotógrafo · Videógrafo · Guadalajara"},
+    "copy":{en:"Copy",es:"Copiar"}
+  };
+  var current="en";
+  try{var s=localStorage.getItem("lang_foto");if(s==="es"||s==="en")current=s;}catch(e){}
+  var toggle=document.getElementById("langToggle");
+  function apply(lang){
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k=el.getAttribute("data-i18n");
+      if(dict[k]&&dict[k][lang]!=null) el.innerHTML=dict[k][lang];
+    });
+    document.documentElement.lang=lang;
+    toggle.textContent=(lang==="en")?"ES":"EN";
+    current=lang;
+    try{localStorage.setItem("lang_foto",lang);}catch(e){}
+  }
+  apply(current);
+  toggle.addEventListener("click",function(){apply(current==="en"?"es":"en");});
+
+  /* Filters */
+  var shots=[].slice.call(document.querySelectorAll(".shot"));
+  document.getElementById("filters").addEventListener("click",function(e){
+    var b=e.target.closest(".fbtn"); if(!b) return;
+    document.querySelectorAll(".fbtn").forEach(function(x){x.classList.remove("on");});
+    b.classList.add("on");
+    var cat=b.getAttribute("data-cat");
+    shots.forEach(function(s){
+      s.classList.toggle("hide", cat!=="all" && s.getAttribute("data-cat")!==cat);
+    });
+  });
+
+  /* Lightbox */
+  var lb=document.getElementById("lb"), lbImg=document.getElementById("lbImg"),
+      lbCap=document.getElementById("lbCap");
+  var catName={portrait:{en:"Portrait",es:"Retrato"},editorial:{en:"Editorial",es:"Editorial"},sport:{en:"Sport",es:"Deporte"}};
+  var idx=0;
+  function visible(){return shots.filter(function(s){return !s.classList.contains("hide");});}
+  function open(i){
+    var list=visible(); if(!list.length) return;
+    idx=(i+list.length)%list.length;
+    var s=list[idx], src=s.querySelector("img").getAttribute("src");
+    lbImg.setAttribute("src",src);
+    var t=s.getAttribute("data-tag"); lbCap.textContent=(catName[t]?catName[t][current]:"")+"  ·  "+(idx+1)+" / "+list.length;
+    lb.classList.add("open"); lb.setAttribute("aria-hidden","false");
+  }
+  function close(){lb.classList.remove("open");lb.setAttribute("aria-hidden","true");lbImg.setAttribute("src","");}
+  shots.forEach(function(s){s.addEventListener("click",function(ev){ev.preventDefault();open(visible().indexOf(s));});});
+  document.getElementById("lbX").addEventListener("click",close);
+  document.getElementById("lbNext").addEventListener("click",function(){open(idx+1);});
+  document.getElementById("lbPrev").addEventListener("click",function(){open(idx-1);});
+  lb.addEventListener("click",function(e){if(e.target===lb)close();});
+  document.addEventListener("keydown",function(e){
+    if(!lb.classList.contains("open"))return;
+    if(e.key==="Escape")close();
+    else if(e.key==="ArrowRight")open(idx+1);
+    else if(e.key==="ArrowLeft")open(idx-1);
+  });
+
+  /* Copy */
+  document.querySelectorAll(".copy").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var t=btn.getAttribute("data-copy");
+      function ok(){var o=btn.textContent;btn.textContent=(current==="en")?"Copied":"Copiado";btn.classList.add("ok");
+        setTimeout(function(){btn.textContent=o;btn.classList.remove("ok");},1400);}
+      try{navigator.clipboard.writeText(t).then(ok).catch(ok);}catch(e){ok();}
+    });
+  });
+</script>
